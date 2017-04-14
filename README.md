@@ -1,25 +1,34 @@
-![Clarity](logo.png)
+### Boilerplate for creating Angular applications with clarity and Clarity.
 
-Clarity Seed
-============
-This is a seed project for Angular 2 applications using [Clarity](https://github.com/vmware/clarity). For more information on the Clarity Design System, visit the [Clarity website](https://vmware.github.io/clarity/).
+#This is Clearly Angular.
 
-We offer this seed project in three different build systems:
 
-1. **Angular-CLI version (branch: master)**
-
-2. Webpack 2 version (branch: webpack)
-
-3. SystemJS version (branch: systemjs)
+Todo
+----------------------------------
+- [ ] Menu service
+- [ ] Multiple Platforms
+    - [ ] Good way to include platform specific views for components that isn't just copying files
+        - [ ] use environment?
+        - [ ] when does angular inline?
+- [ ] Example Actions
+- [ ] Auth Module?
 
 Getting started
 ----------------------------------
-
-#### Angular-CLI version
-
 This seed version provides the following out of the box:
 
-- Angular 2 application with [clarity-icons](https://www.npmjs.com/package/clarity-icons), [clarity-ui](https://www.npmjs.com/package/clarity-ui) and [clarity-angular](https://www.npmjs.com/package/clarity-angular) included
+- Angular 2 application with:
+    - [angular/router](https://github.com/angular/angular) - Angular Router
+    - [clarity-icons](https://www.npmjs.com/package/clarity-icons)
+    - [clarity-ui](https://www.npmjs.com/package/clarity-ui)
+    - [clarity-angular](https://www.npmjs.com/package/clarity-angular)
+    - [ngrx/store](https://github.com/ngrx/store) - RxJS powered state management for Angular apps, inspired by Redux
+    - [ngrx/effects](https://github.com/ngrx/effects) - Side effect model for @ngrx/store
+    - [ngrx/router-store](https://github.com/ngrx/router-store) - Bindings to connect @ngrx/router to @ngrx/store
+    - [ngrx/store-devtools](https://github.com/ngrx/store-devtools) - Instrumentation for @ngrx/store enabling time-travel debugging
+    - [codewareio/ngrx-store-freeze](https://github.com/codewareio/ngrx-store-freeze) - A @ngrx/store meta reducer that prevents state from being mutated
+    - [reselect](https://github.com/reactjs/reselect) - Selector library for Redux
+    - [Redux Beacon](https://github.com/rangle/redux-beacon) - Analytics integration for Redux and ngrx/store
 - Development and production builds
 - Unit test setup with Jasmine and Karma
 - End-to-end test setup with Protractor
@@ -74,8 +83,8 @@ ng build --prod
 
 ## Documentation
 
-
-For documentation on the Clarity Design System, including a list of components and example usage, see [our website](https://vmware.github.io/clarity).
+For documentation on the Clarity Design System, including a list of components and example usage, see [the clarity website](https://vmware.github.io/clarity).
+For documentation on @ngrx, see [the @ngrx website](http://ngrx.github.io/).
 
 
 #### Directory structure
@@ -87,19 +96,23 @@ For documentation on the Clarity Design System, including a list of components a
 ├── package.json               <- dependencies of the project
 ├── protractor.config.js       <- e2e tests configuration
 ├── src/                       <- source code of the application
-│   ├── app/
-│   │   └── component/
-│   │       └── <component>.component.html
-│   │       └── <component>.component.scss
-│   │       └── <component>.component.spec.ts
-│   │       └── <component>.component.ts
-│   │   └── app.component.html
-│   │   └── app.component.scss
-│   │   └── app.component.ts
-│   │   └── app.e2e-spec.js    <- sample e2e spec file
-│   │   └── app.module.ts
-│   │   └── app.routing.ts
-│   │   └── main.ts            <- boostrap file for the angular app
+│   ├── shared/     <- code for all platforms
+│   │   └── core/   <- an example feature module
+│   │       └── component/
+│   │           │       └── <component>.component.html
+│   │           │       └── <component>.component.scss
+│   │           │       └── <component>.component.spec.ts
+│   │           │       └── <component>.component.ts
+│   │           └── core.module.ts
+│   │           └── core.routing.ts
+│   ├── web/        <- platform specific code for the web
+│   │   └── web.component.html
+│   │   └── web.component.scss
+│   │   └── web.component.ts
+│   │   └── web.e2e-spec.js    <- sample e2e spec file
+│   │   └── web.module.ts
+│   │   └── web.routing.ts
+│   └── main.web.ts            <- boostrap file for running your angular app on the web
 │   └── index.html
 ├── angular-cli.json           <- configuration of the angular-cli
 ├── tsconfig.json              <- configuration of the typescript project
@@ -107,15 +120,10 @@ For documentation on the Clarity Design System, including a list of components a
 └── yarn.lock
 ```
 
-
-## Contributing
-
-The Clarity project team welcomes contributions from the community. For more detailed information, see [CONTRIBUTING.md](CONTRIBUTING.md).
-
 ## License
 
-The clarity-seed project is licensed under the MIT license.
+The clearly-angular project is licensed under the MIT license.
 
 ## Feedback
 
-If you find a bug or want to request a new feature, please open a [GitHub issue](https://github.com/vmware/clarity-seed/issues).
+If you find a bug or want to request a new feature, please open a [GitHub issue](https://github.com/d3dc/clearly-angular/issues).
