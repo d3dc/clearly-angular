@@ -1,6 +1,6 @@
 ### Boilerplate for creating Angular applications with clarity and Clarity.
 
-#This is Clearly Angular.
+# This is Clearly Angular.
 
 
 Todo
@@ -24,7 +24,7 @@ This seed version provides the following out of the box:
     - [clarity-angular](https://www.npmjs.com/package/clarity-angular)
     - [ngrx/store](https://github.com/ngrx/store) - RxJS powered state management for Angular apps, inspired by Redux
     - [ngrx/effects](https://github.com/ngrx/effects) - Side effect model for @ngrx/store
-    - [ngrx/router-store](https://github.com/ngrx/router-store) - Bindings to connect @ngrx/router to @ngrx/store
+    - [ngrx/router-store](https://github.com/ngrx/router-store) - Bindings to connect angular/router to @ngrx/store
     - [ngrx/store-devtools](https://github.com/ngrx/store-devtools) - Instrumentation for @ngrx/store enabling time-travel debugging
     - [codewareio/ngrx-store-freeze](https://github.com/codewareio/ngrx-store-freeze) - A @ngrx/store meta reducer that prevents state from being mutated
     - [reselect](https://github.com/reactjs/reselect) - Selector library for Redux
