@@ -5,9 +5,13 @@
  */
 import { ModuleWithProviders } from '@angular/core/src/metadata/ng_module';
 import { Routes, RouterModule } from '@angular/router';
+import { HomePageComponent, AboutPageComponent } from './core/pages';
+import { NavItemType } from './core/shared';
 
 export const ROUTES: Routes = [
-    { path: '', loadChildren: '../modules/core/core.module#CoreModule' },
+    {path: '', redirectTo: 'home', pathMatch: 'full', data: { navItem: { type: NavItemType.BRAND, label: 'Clearly Angular'}}},
+    {path: 'home', component: HomePageComponent, data: { navItem: { type: NavItemType.NAV, label: 'Home'}}},
+    {path: 'about', component: AboutPageComponent, data: { navItem: { type: NavItemType.NAV, label: 'About'}}}
 ];
 
 export const ROUTING: ModuleWithProviders = RouterModule.forRoot(ROUTES);

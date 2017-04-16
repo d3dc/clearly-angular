@@ -8,6 +8,7 @@
         {
             "name": "web",
             "root": "src",
+            "appRoot": "",
             "outDir": "dist",
             "assets": [
                 "images",
