@@ -7,6 +7,7 @@ Todo
 ----------------------------------
 - [x] Nav service
 - [ ] Auth Module
+  - [ ] Common Components e.g: Signup, Login, etc.
   - [ ] Auth Reducer
   - [ ] Auth Actions
   - [ ] Auth Effects
