@@ -96,30 +96,34 @@ For documentation on @ngrx, see [the @ngrx website](http://ngrx.github.io/).
 ```
 .
 ├── README.md
-
 ├── karma.conf.js              <- configuration of the test runner
 ├── package.json               <- dependencies of the project
 ├── protractor.config.js       <- e2e tests configuration
 ├── src/                       <- source code of the application
-│   ├── shared/     <- code for all platforms
-│   │   └── core/   <- an example feature module
-│   │       └── component/
-│   │           │       └── <component>.component.html
-│   │           │       └── <component>.component.scss
-│   │           │       └── <component>.component.spec.ts
-│   │           │       └── <component>.component.ts
-│   │           └── core.module.ts
-│   │           └── core.routing.ts
-│   ├── web/        <- platform specific code for the web
-│   │   └── web.component.html
-│   │   └── web.component.scss
-│   │   └── web.component.ts
-│   │   └── web.e2e-spec.js    <- sample e2e spec file
-│   │   └── web.module.ts
-│   │   └── web.routing.ts
-│   └── main.web.ts            <- boostrap file for running your angular app on the web
+│   ├── app/        <- root module
+│   │   ├── shared/     <- shared components, pipes, and filters
+│   │   │   └── shared.module.ts
+│   │   ├── core/   <- only imported by the AppModule and provides services
+│   │   |   ├── pages/ <- containers for other components that are only used once
+│   │   │   │   └── <page>/
+│   │   │   │       ├── <page>.component.html
+│   │   │   │       ├── <page>.component.scss
+│   │   │   │       ├── <page>.component.spec.ts
+│   │   │   │       └── <page>.component.ts
+│   │   |   ├── shared/ <- app-wide services etc. (STYLE 04-04)
+│   │   │   │   ├── <service>.component.spec.ts
+│   │   │   │   └── <service>.component.ts
+│   │   │   └── core.module.ts <- singleton module
+│   │   │   └── core-routing.module.ts
+│   │   └── app.component.html
+│   │   └── app.component.scss
+│   │   └── app.component.ts
+│   │   └── app.e2e-spec.js    <- sample e2e spec file
+│   │   └── app.module.ts
+│   │   └── app-routing.module.ts
+│   └── main.ts            <- boostrap file for running your angular app on the web
 │   └── index.html
-├── angular-cli.json           <- configuration of the angular-cli
+├── .angular-cli.json           <- configuration of the angular-cli
 ├── tsconfig.json              <- configuration of the typescript project
 ├── tslint.json                <- sample configuration file for tslint
 └── yarn.lock

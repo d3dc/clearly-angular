@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { environment } from 'environments/environment';
-import { STORE_PROVIDER } from 'app/core/core-store.module';
+import { REDUCER_PROVIDER } from 'app/core/core-store.module';
 import * as fromAuth from './shared/auth.reducer';
 
 // TODO: Replace with @ngrx/store v4 solution
@@ -11,7 +11,7 @@ export const REDUCERS = {
 @NgModule({
   providers: [
     {
-      provide: STORE_PROVIDER,
+      provide: REDUCER_PROVIDER,
       useValue: REDUCERS,
       multi: true
     }

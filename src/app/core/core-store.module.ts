@@ -6,13 +6,13 @@ import { Action, combineReducers, StoreModule, INITIAL_REDUCER } from '@ngrx/sto
 import { storeFreeze } from 'ngrx-store-freeze';
 
 // TODO: Replace with @ngrx/store v4 solution
-export interface StoreProvider<T> {
+export interface ReducerProvider<T> {
     [key: string]: (state: T, action: Action) => T;
 }
 
-export const STORE_PROVIDER = new InjectionToken<StoreProvider<any>>('core.storeProvider');
+export const REDUCER_PROVIDER = new InjectionToken<ReducerProvider<any>>('core.ReducerProvider');
 
-function rootReducerFactory(providers: StoreProvider<any>[]) {
+function rootReducerFactory(providers: ReducerProvider<any>[]) {
   const reducers = {};
 
   for (const provider of providers) {
@@ -22,8 +22,6 @@ function rootReducerFactory(providers: StoreProvider<any>[]) {
       }
     }
   }
-
-  console.log('providing reducers', reducers);
 
   if (environment.production) {
     return combineReducers(reducers);
@@ -46,11 +44,11 @@ export const REDUCERS = {
   providers: [
     {
       provide: INITIAL_REDUCER,
-      deps: [ STORE_PROVIDER ],
+      deps: [ REDUCER_PROVIDER ],
       useFactory: rootReducerFactory
     },
     {
-      provide: STORE_PROVIDER,
+      provide: REDUCER_PROVIDER,
       useValue: REDUCERS,
       multi: true
     }

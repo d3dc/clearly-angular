@@ -9,9 +9,6 @@ import { Store } from '@ngrx/store';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    constructor(private router: Router, private nav: NavService, public store: Store<any>) {
-        store.subscribe(state => {
-            console.log(state);
-        });
+    constructor(private router: Router, private nav: NavService) {
     }
 }
