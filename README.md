@@ -5,13 +5,17 @@
 
 Todo
 ----------------------------------
-- [ ] Menu service
+- [x] Nav service
+- [ ] Auth Module
+  - [ ] Auth Reducer
+  - [ ] Auth Actions
+  - [ ] Auth Effects
+  - [ ] Example Auth Service
+- [ ] Use upcoming @ngrx v4 mono-repo for managing reducers from feature modules
 - [ ] Multiple Platforms
     - [ ] Good way to include platform specific views for components that isn't just copying files
         - [ ] use environment?
         - [ ] when does angular inline?
-- [ ] Example Actions
-- [ ] Auth Module?
 
 Getting started
 ----------------------------------
