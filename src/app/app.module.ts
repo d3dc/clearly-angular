@@ -1,12 +1,13 @@
+import { AuthModule } from './auth/auth.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { ClarityModule } from 'clarity-angular';
+import { StoreModule } from '@ngrx/store';
+
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { ROUTING } from "./app.routing";
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
     declarations: [
@@ -14,12 +15,11 @@ import { ROUTING } from "./app.routing";
     ],
     imports: [
         BrowserModule,
-        FormsModule,
-        HttpModule,
         BrowserAnimationsModule,
+        AppRoutingModule,
         ClarityModule.forRoot(),
-        CoreModule,
-        ROUTING
+        CoreModule.forRoot(),
+        AuthModule
     ],
     providers: [],
     bootstrap: [AppComponent]

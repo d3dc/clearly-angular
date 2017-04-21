@@ -1,20 +1,39 @@
+import { ModuleWithProviders } from '@angular/core';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { SharedModule } from 'app/shared/shared.module';
+import { CoreRoutingModule } from './core-routing.module';
+import { CoreStoreModule } from './core-store.module';
 import { NavService } from './shared';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ClarityModule } from 'clarity-angular';
 
 import { HomePageComponent, AboutPageComponent } from './pages';
 
 @NgModule({
   imports: [
-      CommonModule,
-      ClarityModule
+    SharedModule,
+    CoreRoutingModule,
+    CoreStoreModule
   ],
   declarations: [
     HomePageComponent,
     AboutPageComponent
-  ],
-  exports: [HomePageComponent, AboutPageComponent],
-  providers: [NavService]
+  ]
 })
-export class CoreModule {}
+export class CoreModule {
+  static forRoot(/*config: UserServiceConfig*/): ModuleWithProviders {
+    return {
+      ngModule: CoreModule,
+      providers: [
+        // {provide: UserServiceConfig, useValue: config },
+        NavService
+      ]
+    };
+  }
+
+  // Guard against this module being imported anywhere other than the root module
+  constructor (@Optional() @SkipSelf() parentModule: CoreModule) {
+    if (parentModule) {
+      throw new Error(
+        'CoreModule is already loaded. Import it in the AppModule only');
+    }
+  }
+}
