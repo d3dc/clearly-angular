@@ -1,6 +1,1 @@
 /* You can add global styles to this file, and also import other style files */
-.preload-container {
-  transition: all 0.7s;
-  opacity: 0;
-  height: 0;
-}
